@@ -1,0 +1,16 @@
+select 
+`user_id` ,
+sum(case when `profit` >0 then 1 else 0 end) as '盈利单数',
+sum(case when `profit` >0 then 0 else 1 end) as '亏损单数',
+COUNT(0) '总单数'
+from `stock_plan`  where `plan_status_id` =7 and (`buy_time` BETWEEN '2019-01-01' and '2019-12-12')
+GROUP BY  `user_id`  order by count(0) desc limit 20
+
+
+
+SELECT `stock_no` ,
+sum(case when `profit` >0 then 1 else 0 end) as '盈利单数',
+sum(case when `profit` >0 then 0 else 1 end) as '亏损单数',
+COUNT(0) '总单数'
+from `stock_plan`  where user_id in (91578,39346,8082,43835,1732)  and `plan_status_id` =7 and (`buy_time` BETWEEN '2019-01-01' and '2019-12-12')
+GROUP BY `stock_no` order by COUNT(0) desc
