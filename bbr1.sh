@@ -10,6 +10,10 @@ echo "#                     google bbr                            #"
 echo "#############################################################"
 
 
+firewall-cmd --permanent --zone=public --add-port=8080/tcp &&
+
+firewall-cmd --reload &&
+
 uname -r &&
 
 sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org &&
@@ -22,5 +26,7 @@ rpm -qa | grep kernel &&
 
 sudo egrep ^menuentry /etc/grub2.cfg | cut -f 2 -d \' &&
 
-sudo grub2-set-default 1
+sudo grub2-set-default 1 &&
+
+reboot
 
