@@ -15,4 +15,4 @@ sudo sysctl net.ipv4.tcp_available_congestion_control &&
 
 sudo sysctl -n net.ipv4.tcp_congestion_control &&
 
-lsmod | grep bbr &&
+lsmod | grep bbr
