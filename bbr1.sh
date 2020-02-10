@@ -10,9 +10,9 @@ echo "#                     google bbr                            #"
 echo "#############################################################"
 
 
-firewall-cmd --permanent --zone=public --add-port=8080/tcp &&
+#firewall-cmd --permanent --zone=public --add-port=8080/tcp &&
 
-firewall-cmd --reload &&
+#firewall-cmd --reload &&
 
 uname -r &&
 
